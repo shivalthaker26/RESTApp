@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<!DOCTYPE web-app 
+    PUBLIC "-//Sun Microsystems, Inc.//DTD Web Application 2.3//EN" 
+    "http://java.sun.com/dtd/web-app_2_3.dtd">
+
+<web-app>
+
+
+    <!-- General description of your web application -->
+
+    <display-name>Hotel Reservation System</display-name>
+    <description>This is version 0.1 of an application to perform
+      a wild and wonderful task, based on servlets and
+      JSP pages. .</description>
+	
+	<welcome-file-list>
+        <welcome-file>/views/new_customer.html</welcome-file>
+    </welcome-file-list>
+
+</web-app>
