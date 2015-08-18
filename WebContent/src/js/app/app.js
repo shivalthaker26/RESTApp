@@ -6,6 +6,7 @@
     angular.module('reservationApp',[
             'ngRoute',
             'ui.bootstrap',
+            'ui.bootstrap.datetimepicker',
             'ngMessages',
             'reservationApp.controllers',
             'reservationApp.services'

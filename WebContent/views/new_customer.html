@@ -48,12 +48,12 @@
 					<h3 class="text-center font-feature "/> Please Enter your details below:
 				</div>
 				<div class="panel-body" data-ng-controller="MainCtrl">
-					<form name="userForm" ng-submit="user.addCustomer()" novalidate>
+					<form name="userForm" ng-submit="addCustomer()" novalidate>
 							<div class="row padding-top-10">
 								<div class="col-md-6">
 									<div class="form-group" ng-class="{ 'has-error' : userForm.first_name.$invalid && !userForm.first_name.$pristine }">
 										<label for="first_name" class="control-label font-feature">Name:</label>
-										<input type="text" name="first_name" class="form-control" id="first_name"  ng-model="user.first_name" placeholder="First Name" required>
+										<input type="text"  name="first_name" class="form-control" id="first_name"  ng-model="user.first_name" placeholder="First Name" required>
 										<p ng-show="userForm.first_name.$invalid && !userForm.first_name.$pristine" class="help-block">Your First Name is required.</p>
 									</div>
 								</div>
@@ -69,7 +69,7 @@
 							<label for="country_selector" class="control-label font-feature">Contact Details:</label>
 							<div class="row padding-top-10">
 								<div class="col-md-2">
-									<select id="country_selector" data-ng-model="user.select_country" class="form-control selectdropdownelement-native" >
+									<select id="country_selector" data-ng-model="user.select_country" name="select_country" class="form-control selectdropdownelement-native" >
 										<option value=1 selected="selected" />United States +1
 										<option value=91/>India +91
 										<option value=44/>United Kingdom +44
@@ -92,12 +92,12 @@
 						<div class="form-group">
 							<label class="control-label font-feature">Choose Date and time:</label>
 							<div class="row padding-top-10">
-								<div class="col-md-3">
+								<div class="col-md-6">
                                     <p class="input-group">
-                                        <input name="customer_date" type="text" class="form-control" datepicker-popup="{{format}}" data-ng-model="user.dtPicker" is-open="status.opened" min-date="minDate" max-date="'2020-06-22'" datepicker-options="dateOptions" date-disabled="disabled(date, mode)" ng-required="true" close-text="Close" />
-                                          <span class="input-group-btn">
-                                            <button type="button" class="btn btn-default" ng-click="open($event)"><i class="glyphicon glyphicon-calendar"></i></button>
-                                          </span>
+										<input type="text" class="form-control" datetime-picker="dd MMM yyyy HH:mm" ng-model="user.dates.date3" is-open="open.date3" />
+                <span class="input-group-btn">
+                    <button type="button" class="btn btn-default" ng-click="openCalendar($event, 'date3')"><i class="glyphicon glyphicon-calendar"></i></button>
+                </span>
 
 
 
@@ -105,21 +105,15 @@
 
 								</div>
 
-								<div class="col-md-3">
-
-										<timepicker class=" input-group form-control" data-ng-model="user.timePicker" ng-change="changed()" hour-step="hstep" minute-step="mstep" show-meridian="ismeridian"></timepicker>
-
-
-								</div>
 
 							
 								<div class="col-md-3">
-									<input type="number" data-ng-model="user.no_of_guests" class="form-control" id="no_of_guests" placeholder="No of Guests"/>
+									<input type="number" name="no_of_guests" data-ng-model="user.no_of_guests" class="form-control" id="no_of_guests" placeholder="No of Guests"/>
 								</div>
 								<div class="col-md-3 padding-top-10 font-feature">
-									<label for="radio_yes" class="control-label">Is this your First Visit?</label>
+									<label class="control-label">Is this your First Visit?</label>
 									<input data-ng-model="user.first_visit" type="radio" value=true name="visiting_answer" id="radio"/>Yes
-									<input data-ng-model="user.first_visit" type="radio" value=false name="visiting_answer" id="radio"/>No
+									<input data-ng-model="user.first_visit" type="radio" value=false name="visiting_answer" id="radio1"/>No
 								</div>
 							</div>
 						</div>
@@ -209,6 +203,7 @@
 		<script src="../src/js/app/app.js"></script>
 		<script src="../src/js/controllers/mainCtrl1.js"></script>
 		<script src="../src/js/services/service1.js"></script>
+		<script src="../src/js/lib/datetime-picker.min.js"></script>
 
 </body>
 </html>
