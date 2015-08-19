@@ -5,9 +5,9 @@
 
     angular.module('reservationApp',[
             'ngRoute',
-            'ui.bootstrap',
+        'ngMessages',
             'ui.bootstrap.datetimepicker',
-            'ngMessages',
+        'ui.bootstrap',
             'reservationApp.controllers',
             'reservationApp.services'
             
@@ -16,4 +16,7 @@
      reservationAppCtrls   = angular.module('reservationApp.controllers',[]);
 
     reservationAppServices = angular.module('reservationApp.services',[]);
+
+
+
 
