@@ -33,26 +33,42 @@
                         </li>
                     </ul>
                     </li>
-                    <li class="modal"><!--<a href="#" data-toggle="modal" data-target="#myModalContent.html">Admin Login</a></li>-->
+                    <li class="modal font-feature"><!--<a href="#" data-toggle="modal" data-target="#myModalContent.html">Admin Login</a></li>-->
                         <script type="text/ng-template" id="myModalContent.html">
-                            <div class="modal-header">
-                                <h3>I'm a modal!</h3>
+                            <div class="modal-header font-feature">
+                                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">X</button>
+                                <h1 class="text-center">Admin Login</h1>
                             </div>
+
                             <form ng-submit="submit()">
-                                <div class="modal-body">
-                                    <label>User name</label>
-                                    <input type="text" ng-model="user.user" />
-                                    <label>Password</label>
-                                    <input type="password" ng-model="user.password" />
-                                </div>
-                                <div class="modal-footer">
-                                    <button class="btn btn-warning" ng-click="cancel()">Cancel</button>
-                                    <input type="submit" class="btn primary-btn" value="Submit" />
-                                </div>
+                                <form class="form col-md-12 center-block">
+
+                                    <div class="form-group">
+                                        <input type="email" class="form-control input-lg" placeholder="Email">
+                                    </div>
+                                    <div class="form-group">
+                                        <input type="password" class="form-control input-lg" placeholder="Password">
+                                    </div>
+
+                                    <div class="form-group">
+                                        <div class="col-md-12 text-center font-feature">
+                                            <label><input  type="checkbox" value="" id="remember_me"> Keep me Signed  </label>
+                                        </div>
+                                        <div class="col-md-12">
+                                            <button type="button" class="btn btn-link btn-block " id="forgot_password">Forgot Password?</button>
+                                        </div>
+                                    </div>
+
+                                    <div class="modal-footer">
+                                        <button class="btn btn-warning" ng-click="cancel()">Cancel</button>
+                                        <input type="submit" class="btn primary-btn" value="Submit" />
+                                    </div>
+                                 </form>
                             </form>
                         </script>
 
-                        <button class="btn" ng-click="open()">Open me!</button>
+                        <a  href="#"  ng-click="open()">Admin Login</a>
+                    </li>
                 </ul>
             </div>
         </div>

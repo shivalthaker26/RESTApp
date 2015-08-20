@@ -6,14 +6,13 @@ public class Customer {
 	private int id;
 	private String first_name;
 	private String last_name;
-	private String select_country;
-	private int phone_number;
+	private int phone_prefix;
+	private String phone_number;
 	private String email;
-	private String dtPicker;
-	private String timePicker;
-	private String no_of_guests;
+	private int reservation_date;
+	private int no_of_guests;
 	private String specialRequests;
-	private String first_visit;
+	private String visit;
 	private String notifications;
 	public int getId() {
 		return id;
@@ -33,16 +32,18 @@ public class Customer {
 	public void setLast_name(String last_name) {
 		this.last_name = last_name;
 	}
-	public String getSelect_country() {
-		return select_country;
+
+	
+	public int getPhone_prefix() {
+		return phone_prefix;
 	}
-	public void setSelect_country(String select_country) {
-		this.select_country = select_country;
+	public void setPhone_prefix(int phone_prefix) {
+		this.phone_prefix = phone_prefix;
 	}
-	public int getPhone_number() {
+	public String getPhone_number() {
 		return phone_number;
 	}
-	public void setPhone_number(int phone_number) {
+	public void setPhone_number(String phone_number) {
 		this.phone_number = phone_number;
 	}
 	public String getEmail() {
@@ -51,22 +52,18 @@ public class Customer {
 	public void setEmail(String email) {
 		this.email = email;
 	}
-	public String getDtPicker() {
-		return dtPicker;
+	
+	
+	public int getReservation_date() {
+		return reservation_date;
 	}
-	public void setDtPicker(String dtPicker) {
-		this.dtPicker = dtPicker;
+	public void setReservation_date(int reservation_date) {
+		this.reservation_date = reservation_date;
 	}
-	public String getTimePicker() {
-		return timePicker;
-	}
-	public void setTimePicker(String timePicker) {
-		this.timePicker = timePicker;
-	}
-	public String getNo_of_guests() {
+	public int getNo_of_guests() {
 		return no_of_guests;
 	}
-	public void setNo_of_guests(String no_of_guests) {
+	public void setNo_of_guests(int no_of_guests) {
 		this.no_of_guests = no_of_guests;
 	}
 	public String getSpecialRequests() {
@@ -75,11 +72,12 @@ public class Customer {
 	public void setSpecialRequests(String specialRequests) {
 		this.specialRequests = specialRequests;
 	}
-	public String getFirst_visit() {
-		return first_visit;
+	
+	public String getVisit() {
+		return visit;
 	}
-	public void setFirst_visit(String first_visit) {
-		this.first_visit = first_visit;
+	public void setVisit(String visit) {
+		this.visit = visit;
 	}
 	public String getNotifications() {
 		return notifications;

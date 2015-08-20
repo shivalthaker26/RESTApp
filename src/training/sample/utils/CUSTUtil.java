@@ -1,3 +1,4 @@
+
 package training.sample.utils;
 
 import java.sql.Connection;
@@ -6,9 +7,9 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
-public class DBUtil {
+public class CUSTUtil {
 
-	private final static String URL = "jdbc:mysql://localhost:3306/emp_db";
+	private final static String URL = "jdbc:mysql://localhost:3306/customer_db";
 	private final static String USER = "root";
 	private final static String PASSWORD = "root";
 
