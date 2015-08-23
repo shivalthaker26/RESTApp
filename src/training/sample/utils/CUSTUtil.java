@@ -11,7 +11,7 @@ public class CUSTUtil {
 
 	private final static String URL = "jdbc:mysql://localhost:3306/customer_db";
 	private final static String USER = "root";
-	private final static String PASSWORD = "root";
+	private final static String PASSWORD = "";
 
 	static {
 		try {

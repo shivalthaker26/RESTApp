@@ -44,14 +44,30 @@ reservationAppCtrls
             $scope.open[date] = true;
         };
 
+$scope.getReservation = function()
+{
+    var userVm =this;
 
+    if(user.custId)
+    {
+       return $http(
+            {
+                method: 'GET',
+                url: 'api/customer/id/' + user.custId
 
+            }).success(function(data){
+               console.log(data)
+           }).error(function(error){
+               console.log(error);
+           });
+    }
+}
 
         $scope.addCustomer = function()
         {
                 if($scope.user)
                 {
-                    var date = $scope.user.dates.date3.getTime();
+                    var date = $scope.user.dates.date3.getTime()/1000.0;
 
 
                 }

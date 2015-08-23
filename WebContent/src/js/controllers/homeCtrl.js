@@ -31,7 +31,7 @@ reservationAppCtrls
                     }
                 }
             });
-        };
+        }
 
         <!-- Simple dropdown -->
         $scope.items = [

@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html ng-app="reservationApp">
+<head>
+	<title>Customer!</title>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" />
+  	<link href='http://fonts.googleapis.com/css?family=Nunito' rel='stylesheet' type='text/css'>
+  	<link href='http://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'>
+  	<link rel="stylesheet" href="static/css/style.css">
+</head>
+
+<body data-ng-controller="CreateReservationCtrl">
+	<div class="navbar navbar-inverse navbar-fixed-top">
+		    <div class="container">
+		      <div class="navbar-header">
+		        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+		          <span class="icon-bar"></span>
+		          <span class="icon-bar"></span>
+		          <span class="icon-bar"></span>
+		        </button>
+		        <a class="navbar-brand" href="home.html">Smokin' Hot!</a>
+		      </div>
+		      <div class="collapse navbar-collapse pull-right">
+		        <ul class="nav navbar-nav">
+		          <li class="active"><a href="home.html">Home</a></li>
+		          <li><a href="#about">About</a></li>
+		          <li><a href="#contact">Contact</a></li>
+		          <li class="dropdown">
+	          	<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Reservations<span class="caret"></span></a>
+	          	<ul class="dropdown-menu">
+	          		<li><a href="new_customer.html">Create a Reservation</a></li>
+	          		<li><a href="#">Manage a Reservation</a></li>
+	          		<li><a href="#">Change a Reservation</a></li>
+	          		<li><a href="#">Cancel a Reservation</a></li>
+	          	</ul>
+	          </li>
+		          <li class="modal"><a href="#" data-toggle="modal" data-target="#loginModal">Admin Login</a></li>
+		        </ul>
+		      </div>
+		    </div>
+    </div>
+	<div class="container margin-top-10">
+		
+		<div class="container padding-top-10">
+			
+
+			<div class="panel-body">
+    <button class="btn btn-default" data-ng-click="getReservation()" type="submit" value="">Get Reservation</button>
+
+
+</div>
+
+
+			<table class="table table-striped">
+			<thead>
+			<tr>
+			<th>Confirmation Number</th>
+			<th>First_name></th>
+			<th>Last_name</th>
+			<th>reservation_date</th>
+			</tr>
+			</thead>
+			<tbody>
+			
+			<tr ng-repeat="r in reservation">
+			<td>{{r.confirmationNumber}}</td>
+			<td>{{r.first_name}}</td>
+			<td>{{r.last_name}}</td>
+			<td>{{r.date | date:'medium'}}</td>
+			</tr>
+			</tbody>
+			</table>
+			<hr>
+			
+			
+			
+			
+
+			
+		</div>
+	</div>
+	<div>
+			<div class="panel-body">
+				<input type="text" placeholder="EMP ID" data-ng-model="custId"/>
+			 
+	<button data-ng-click="getCustomer()">Get Customer</button>
+			</div>
+			
+			<form class="form-horizontal">
+    <div class="form-group">
+      <label class="col-sm-2 control-label">Id</label>
+      <div class="col-sm-10">
+        <p class="form-control-static">{{getCustomer.id}}</p>
+      </div>
+      <div class="form-group">
+      <label class="col-sm-2 control-label">Id</label>
+      <div class="col-sm-10">
+        <p class="form-control-static">{{getCustomer.date | date:'medium'}}</p>
+      </div>
+	</div>
+
+
+<div id="loginModal" class="modal fade" tabindex="-1" role="dialog" aria-hidden="true">
+  <div class="modal-dialog">
+  <div class="modal-content font-feature">
+      <div class="modal-header font-feature">
+          <button type="button" class="close" data-dismiss="modal" aria-hidden="true">X</button>
+          <h1 class="text-center">Admin Login</h1>
+      </div>
+      <div class="modal-body">
+          <form class="form col-md-12 center-block">
+            <div class="form-group">
+              <input type="email" class="form-control input-lg" placeholder="Email">
+            </div>
+            <div class="form-group">
+              <input type="password" class="form-control input-lg" placeholder="Password">
+            </div>
+            <div class="form-group">
+              <div class="row">
+                <div class="col-md-12 text-center">
+                  <a class="btn btn-primary btn-lg btn-block" href="welcome_admin.html" > Sign In</a>
+             </div>
+            </div>
+            </div>
+            <div class="form-group">
+              <div class="col-md-12 text-center">
+                <label><input  type="checkbox" value="" id="remember_me"> Keep me Signed  </label>
+              </div>
+              <div class="col-md-12">
+                <button type="button" class="btn btn-link btn-block " id="forgot_password">Forgot Password?</button>
+              </div>
+            </div>
+
+          </form>
+      </div>
+      <div class="modal-footer">
+          <div class="col-md-12">
+		  </div>	
+      </div>
+  </div>
+  </div>
+  
+  
+</div>
+
+
+		<script src="https://code.angularjs.org/1.4.3/angular.min.js"></script>
+	<script src="https://code.angularjs.org/1.4.3/angular-route.min.js"></script>
+
+	<script src="https://code.angularjs.org/1.4.3/angular-messages.js"></script>
+		<script src="src/js/lib/ui-bootstrap-tpls-0.13.3.min.js"></script>
+	<script src="src/js/lib/datetime-picker.min.js"></script>
+
+	<script src="scripts/app1.js"></script>
+	<script src="scripts/controllers/createReservationCtrl.js"></script>
+
+</body>
+</html>

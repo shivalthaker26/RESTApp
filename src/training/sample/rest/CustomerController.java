@@ -69,4 +69,32 @@ public class CustomerController
 		
 		
 	}
+   @POST
+   @Path("/add")
+   @Consumes(MediaType.APPLICATION_JSON)
+   @Produces(MediaType.APPLICATION_JSON)
+   public AppResponse addCustomer(Customer cust)
+   {
+	   System.out.print("SHIVSVLMGBLXFKGLXFKGHLDKGF");
+
+	   AppResponse resp = new AppResponse();
+		
+		try
+		{
+		CustomerDAO dao = new CustomerDAO();
+		cust = dao.addCustomer(cust);
+		resp.setMessage("Customer has been addded to the database");
+		resp.setPayload(cust);
+		}
+		catch(AppException e)
+		{
+			e.printStackTrace();
+			resp.setStatus(AppResponse.ERROR);			
+			resp.setMessage(e.getMessage());
+		}
+		return resp;
+   }
+   
+   
+   
 }

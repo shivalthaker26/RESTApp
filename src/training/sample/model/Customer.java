@@ -1,24 +1,27 @@
 package training.sample.model;
 
+
+import java.util.UUID;
 public class Customer {
 
 	
-	private int id;
 	private String first_name;
 	private String last_name;
 	private int phone_prefix;
 	private String phone_number;
 	private String email;
-	private int reservation_date;
+	private int date;
 	private int no_of_guests;
 	private String specialRequests;
 	private String visit;
 	private String notifications;
-	public int getId() {
-		return id;
+	private String confirmationNumber;
+	
+	public String getConfirmationNumber() {
+		return confirmationNumber;
 	}
-	public void setId(int id) {
-		this.id = id;
+	public void setConfirmationNumber(String confirmationNumber) {
+		this.confirmationNumber = confirmationNumber;
 	}
 	public String getFirst_name() {
 		return first_name;
@@ -54,11 +57,12 @@ public class Customer {
 	}
 	
 	
-	public int getReservation_date() {
-		return reservation_date;
+	
+	public int getDate() {
+		return date;
 	}
-	public void setReservation_date(int reservation_date) {
-		this.reservation_date = reservation_date;
+	public void setDate(int date) {
+		this.date = date;
 	}
 	public int getNo_of_guests() {
 		return no_of_guests;
@@ -85,8 +89,4 @@ public class Customer {
 	public void setNotifications(String notifications) {
 		this.notifications = notifications;
 	}
-	
-	
-	
-	
 }

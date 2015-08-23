@@ -10,6 +10,7 @@
 	<hr>
 	<input type="text" placeholder="EMP ID" data-ng-model="mctrl.empId"/>
 	<button data-ng-click="mctrl.getEmp()">Get Employee</button>
+	
 	<hr>
 	<form data-ng-submit="mctrl.tryLogin()" data-ng-show="!mctrl.loggedIn">
 		<div>
@@ -23,6 +24,7 @@
 		<div>
 			<button type="submit">Login</button>
 		</div>
+		
 		</form>
 			<p data-ng-show="mctrl.loggedIn"/>Yo Bitch, u're logged in...
 		
