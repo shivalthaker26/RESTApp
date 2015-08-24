@@ -69,7 +69,7 @@ public class CustomerDAO {
 	
 }
 	
-public Customer getPerson(int custId) throws AppException {
+public Customer getPerson(String conf_num) throws AppException {
 		
 		Customer cust = new Customer();
 		
@@ -79,7 +79,7 @@ public Customer getPerson(int custId) throws AppException {
 		ResultSet rs = null;
 		try {
 			ps = con.prepareStatement("SELECT * FROM customer WHERE CONFIRM_NUM=?");
-			ps.setInt(1, custId);
+			ps.setString(1, conf_num);
 			
 			rs = ps.executeQuery();
 			
@@ -101,7 +101,7 @@ public Customer getPerson(int custId) throws AppException {
 			}
 			else
 			{
-				throw new AppException("Customer with CONFIRM_NUM =" + custId + " does not exists in Database.");
+				throw new AppException("Customer with CONFIRM_NUM =" + conf_num + " does not exists in Database.");
 			}
 			
 		} catch (SQLException e) {

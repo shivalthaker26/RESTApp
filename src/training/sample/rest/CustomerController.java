@@ -14,10 +14,8 @@ import javax.ws.rs.core.Context;
 import javax.ws.rs.core.MediaType;
 
 import training.sample.dao.CustomerDAO;
-import training.sample.dao.EmployeeDAO;
 import training.sample.exceptions.AppException;
 import training.sample.model.Customer;
-import training.sample.model.Employee;
 
 @Path("/customer")
 public class CustomerController
@@ -49,14 +47,14 @@ public class CustomerController
    @GET
 	@Path("/get/{id}")
 	@Produces(MediaType.APPLICATION_JSON)
-	public AppResponse getPerson(@PathParam("id") int custId)
+	public AppResponse getPerson(@PathParam("id") String conf_num)
 	{
 		AppResponse resp = new AppResponse();
 		
 		try
 		{
 		CustomerDAO dao = new CustomerDAO();
-		Customer cust = dao.getPerson(custId);
+		Customer cust = dao.getPerson(conf_num);
 		resp.setPayload(cust);
 		}
 		catch(AppException e)

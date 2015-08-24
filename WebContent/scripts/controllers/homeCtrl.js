@@ -1,7 +1,7 @@
 
 'use strict';
 reservationAppCtrls
-    .controller('HomeCtrl', ['$http','$scope','$modal', function($http, $scope,$modal) {
+    .controller('HomeCtrl', ['$http','$scope','$modal','$location', function($http, $scope,$modal,$location) {
 
         $scope.user = {
             user: 'name',
@@ -33,7 +33,6 @@ reservationAppCtrls
             });
         }
 
-        <!-- Simple dropdown -->
         $scope.items = [
             'Create a Reservation',
             'Manage a Reservation',
@@ -52,6 +51,21 @@ reservationAppCtrls
             $scope.status.isopen = !$scope.status.isopen;
         };
 
-
+        
+        $scope.changeView = function(index)
+        {
+        	switch(index){
+        	case 0:
+        		$location.path("/reservation")
+        		break;
+        	case 1:
+        		$location.path("/management")
+        		break;
+        	case 2:
+        		$location.path("#")
+        		break;
+        	}
+        	
+        }
 
     }]);

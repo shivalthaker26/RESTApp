@@ -1,78 +1,31 @@
 <!DOCTYPE html>
-<html data-ng-app="restApp">
+<html ng-app="reservationApp">
 <head>
-<meta charset="UTF-8">
-<title>Insert title here</title>
+    <title>Welcome to Smokin' Hot!</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" />
+    <link href='http://fonts.googleapis.com/css?family=Nunito' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="static/css/style.css">
 </head>
-<body data-ng-controller="MainCtrl as mctrl">
 
-	<button data-ng-click="mctrl.getAllEmp()">Get All Employees</button>
-	<hr>
-	<input type="text" placeholder="EMP ID" data-ng-model="mctrl.empId"/>
-	<button data-ng-click="mctrl.getEmp()">Get Employee</button>
-	
-	<hr>
-	<form data-ng-submit="mctrl.tryLogin()" data-ng-show="!mctrl.loggedIn">
-		<div>
-			<label>Email</label>
-			<input type="text" data-ng-model="mctrl.auth.email"> 
-		</div>
-		<div>
-			<label>Password </label>
-			<input type="password" data-ng-model="mctrl.auth.password">
-		</div>	 
-		<div>
-			<button type="submit">Login</button>
-		</div>
-		
-		</form>
-			<p data-ng-show="mctrl.loggedIn"/>Yo Bitch, u're logged in...
-		
-	<hr>
-	<form data-ng-submit="mctrl.addEmp()">
-		<div>
-			<label>First Name</label>
-			<input type="text" data-ng-model="mctrl.newEmp.firstName">
-		</div>
-		<div>
-			<label>Last Name</label>
-			<input type="text" data-ng-model="mctrl.newEmp.lastName">
-		</div>
-		<div>
-			<label>Email</label>
-			<input type="email" data-ng-model="mctrl.newEmp.email">
-		</div>
-		<div>
-			<label>Phone</label>
-			<input type="text" data-ng-model="mctrl.newEmp.phone">
-		</div>
-		<div>
-			<label>Address Line1</label>
-			<input type="text" data-ng-model="mctrl.newEmp.address1">
-		</div>
-		<div>
-			<label>Address Line2</label>
-			<input type="text" data-ng-model="mctrl.newEmp.address2">
-		</div>
-		<div>
-			<label>City</label>
-			<input type="text" data-ng-model="mctrl.newEmp.city">
-		</div>
-		<div>
-			<label>State</label>
-			<input type="text" data-ng-model="mctrl.newEmp.state">
-		</div>
-		<div>
-			<label>ZIP</label>
-			<input type="text" data-ng-model="mctrl.newEmp.zip">
-		</div>
-		<div>
-			<button type="submit">Add Employee</button>
-		</div>
-	</form>
+<body>
+<div ng-controller="HomeCtrl" ng-include="'views/nav_bar.html'"></div>
+<ng-view></ng-view>
+<script src="static/js/jquery.min.js"></script>
+<script src="static/js/bootstrap.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.4/angular.min.js"></script>
+<script src="https://code.angularjs.org/1.4.4/angular-route.js"></script>
 
-<script src="https://code.angularjs.org/1.4.3/angular.min.js"></script>
+<script src="https://code.angularjs.org/1.4.4/angular-messages.js"></script>
+<script src="static/js/ui-bootstrap-tpls-0.13.3.min.js"></script>
+<script src="static/js/datetime-picker.min.js"></script>
+
 <script src="scripts/app.js"></script>
-<script src="scripts/controllers/main-ctrl.js"></script>
+<script src="scripts/services/service1.js"></script>
+<script src="scripts/controllers/homeCtrl.js"></script>
+<script src="scripts/controllers/createReservationCtrl.js"></script>
+<script src="scripts/controllers/manageReservationCtrl.js"></script>
+<script src="scripts/controllers/editReservationCtrl.js"></script>
+
 </body>
 </html>

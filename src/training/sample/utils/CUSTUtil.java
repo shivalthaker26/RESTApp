@@ -42,7 +42,7 @@ public class CUSTUtil {
 	
 
 	public static void main(String[] args) {
-		DBUtil.connectToDB();
+		CUSTUtil.connectToDB();
 	}
 	public static void closeResources(PreparedStatement ps, ResultSet rs, Connection con) {
 		// TODO Auto-generated method stub

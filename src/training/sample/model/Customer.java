@@ -1,7 +1,6 @@
 package training.sample.model;
 
 
-import java.util.UUID;
 public class Customer {
 
 	

@@ -1,229 +1,44 @@
-<!DOCTYPE html>
-<html data-ng-app="reservationApp">
-<head>
-    <title>Welcome to Smokin' Hot!</title>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" />
-    <link href='http://fonts.googleapis.com/css?family=Nunito' rel='stylesheet' type='text/css'>
-    <link href='http://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'>
-    <link rel="stylesheet" href="../static/css/style.css">
-</head>
-<body data-ng-controller="HomeCtrl">
-<div class="navbar wrapper">
-    <div class="container">
-        <div class="navbar navbar-inverse navbar-fixed-top">
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                    <span class="icon-bar" ></span>
-
-                </button>
-                <a class="navbar-brand " href="home.html">Smokin' Hot!</a>
-            </div>
-            <div class="collapse navbar-collapse pull-right">
-                <ul class="nav navbar-nav">
-                    <li class="active"><a href="home.html">Home</a></li>
-                    <li><a href="#about">About</a></li>
-                    <li><a href="#contact">Contact</a></li>
-                    <li dropdown on-toggle="toggled(open)">
-                        <a href id="simple-dropdown" dropdown-toggle>
-                    Reservations<span class="caret"></span>
-                    </a>
-                    <ul class="dropdown-menu" aria-labelledby="simple-dropdown">
-                        <li ng-repeat="choice in items">
-                            <a href>{{choice}}</a>
-                        </li>
-                    </ul>
-                    </li>
-                    <li class="modal font-feature"><!--<a href="#" data-toggle="modal" data-target="#myModalContent.html">Admin Login</a></li>-->
-                        <script type="text/ng-template" id="myModalContent.html">
-                            <div class="modal-header font-feature">
-                                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">X</button>
-                                <h1 class="text-center">Admin Login</h1>
-                            </div>
-
-                            <form ng-submit="submit()">
-                                <form class="form col-md-12 center-block">
-
-                                    <div class="form-group">
-                                        <input type="email" class="form-control input-lg" placeholder="Email">
-                                    </div>
-                                    <div class="form-group">
-                                        <input type="password" class="form-control input-lg" placeholder="Password">
-                                    </div>
-
-                                    <div class="form-group">
-                                        <div class="col-md-12 text-center font-feature">
-                                            <label><input  type="checkbox" value="" id="remember_me"> Keep me Signed  </label>
-                                        </div>
-                                        <div class="col-md-12">
-                                            <button type="button" class="btn btn-link btn-block " id="forgot_password">Forgot Password?</button>
-                                        </div>
-                                    </div>
-
-                                    <div class="modal-footer">
-                                        <button class="btn btn-warning" ng-click="cancel()">Cancel</button>
-                                        <input type="submit" class="btn primary-btn" value="Submit" />
-                                    </div>
-                                 </form>
-                            </form>
-                        </script>
-
-                        <a  href="#"  ng-click="open()">Admin Login</a>
-                    </li>
-                </ul>
-            </div>
-        </div>
-    </div>
-    <!--<div id="myCarousel" class="carousel slide">
-
-        <ol class="carousel-indicators">
-            <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
-            <li data-target="#myCarousel" data-slide-to="1"></li>
-            <li data-target="#myCarousel" data-slide-to="2"></li>
-        </ol>
-        <div class="carousel-inner">
-            <div class="item active">
-                <img src="../static/images/restaurant_1.jpg" style="width:100%" class="img-responsive">
-                <div class="container">
-                    <div class="carousel-caption">
-                        <h4>Fine Dining!</h4>
-
-                    </div>
-                </div>
-            </div>
-            <div class="item">
-                <img src="../static/images/restaurant_2.jpg" style="width:100%" class="img-responsive">
-                <div class="container">
-                    <div class="carousel-caption">
-                        <h4>Experience the Luxury Within</h4>
-                    </div>
-                </div>
-            </div>
-            <div class="item">
-                <img src="../static/images/restaurant_3.jpg" style="width:100%" class="img-responsive">
-                <div class="container">
-                    <div class="carousel-caption">
-                        <h4>Finest Quality!</h4>
-
-                    </div>
-                </div>
-            </div>
-        </div>
-        <a class="left carousel-control" href="#myCarousel" data-slide="prev">
-            <span class="icon-prev"></span>
-        </a>
-        <a class="right carousel-control" href="#myCarousel" data-slide="next">
-            <span class="icon-next"></span>
-        </a>
-    </div>-->
 
 
-</div>
 
 
 <div class="container marketing">
 
 
-    <div class="row">
-        <div class="col-md-4 text-center">
+        <div class="row">
+            <div class="col-md-4 text-center">
 
-            <h2>Experienced Chefs</h2>
-            <p><a class="btn btn-default" href="#">View details </a></p>
+                <h2>Experienced Chefs</h2>
+                <p><a class="btn btn-default" href="#">View details </a></p>
+            </div>
+            <div class="col-md-4 text-center">
+
+                <h2>Tailored made Dishes</h2>
+                <p><a class="btn btn-default" href="#">View details </a></p>
+            </div>
+            <div class="col-md-4 text-center">
+
+                <h2>Our services</h2>
+
+                <p><a class="btn btn-default" href="#">View details </a></p>
+            </div>
         </div>
-        <div class="col-md-4 text-center">
 
-            <h2>Tailored made Dishes</h2>
-            <p><a class="btn btn-default" href="#">View details </a></p>
+        <hr class="featurette-divider">
+
+        <div class="featurette">
+
+            <h2 class="featurette-heading">Finest Quality Food. <span class="text-muted">It'll blow your mind.</span></h2>
+            <p class="lead">Dishes enjoyed for generations in villages throughout Italy inspire our menu, giving Buca its authentic Italian fare. We continue to innovate and create recipes beyond our traditional style by adding new menu items inspired by Northern and Southern Italian cuisine.</p>
         </div>
-        <div class="col-md-4 text-center">
 
-            <h2>Our services</h2>
+        <hr class="featurette-divider">
 
-            <p><a class="btn btn-default" href="#">View details </a></p>
+        <div class="featurette">
+
+            <h2 class="featurette-heading">Dishes, <span class="text-muted">You can't deny</span></h2>
+            <p class="lead">always welcoming and always serving up hearty diner food along with a mug of fresh hot coffee. So come on in anytime, park yourself in a comfortable booth, take a seat at the counter, whatever you want, because it won't take you long to understand why we're truly America's diner.</p>
         </div>
-    </div>
 
-
-
-
-    <hr class="featurette-divider">
-
-    <div class="featurette">
-
-        <h2 class="featurette-heading">Finest Quality Food. <span class="text-muted">It'll blow your mind.</span></h2>
-        <p class="lead">Dishes enjoyed for generations in villages throughout Italy inspire our menu, giving Buca its authentic Italian fare. We continue to innovate and create recipes beyond our traditional style by adding new menu items inspired by Northern and Southern Italian cuisine.</p>
-    </div>
-
-    <hr class="featurette-divider">
-
-    <div class="featurette">
-
-        <h2 class="featurette-heading">Dishes, <span class="text-muted">You can't deny</span></h2>
-        <p class="lead">always welcoming and always serving up hearty diner food along with a mug of fresh hot coffee. So come on in anytime, park yourself in a comfortable booth, take a seat at the counter, whatever you want, because it won't take you long to understand why we're truly America's diner.</p>
-    </div>
-
-    <hr class="featurette-divider">
+        <hr class="featurette-divider">
 </div>
-
-
-
-
-<!--<div id="loginModal" class="modal fade" tabindex="-1" role="dialog" aria-hidden="true">
-    <div class="modal-dialog">
-        <div class="modal-content font-feature">
-            <div class="modal-header font-feature">
-                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">X</button>
-                <h1 class="text-center">Admin Login</h1>
-            </div>
-            <div class="modal-body">
-                <form class="form col-md-12 center-block">
-                    <div class="form-group">
-                        <input type="email" class="form-control input-lg" placeholder="Email">
-                    </div>
-                    <div class="form-group">
-                        <input type="password" class="form-control input-lg" placeholder="Password">
-                    </div>
-                    <div class="form-group">
-                        <div class="row">
-                            <div id ="admin_signin" class="col-md-12 text-center">
-                                <a class="btn btn-primary btn-lg btn-block" href="welcome_admin.html" > Sign In</a>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="form-group">
-                        <div class="col-md-12 text-center">
-                            <label><input  type="checkbox" value="" id="remember_me"> Keep me Signed  </label>
-                        </div>
-                        <div class="col-md-12">
-                            <button type="button" class="btn btn-link btn-block " id="forgot_password">Forgot Password?</button>
-                        </div>
-                    </div>
-
-                </form>
-            </div>
-            <div class="modal-footer">
-                <div class="col-md-12">
-                </div>
-            </div>
-        </div>
-    </div>
-</div>-->
-
-
-<script src="../src/js/lib/jquery.min.js"></script>
-<script src="../src/js/lib/bootstrap.min.js"></script>
-
-<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.4/angular.min.js"></script>
-<script src="https://code.angularjs.org/1.4.3/angular-route.min.js"></script>
-
-<script src="https://code.angularjs.org/1.4.3/angular-messages.js"></script>
-<script src="../src/js/lib/ui-bootstrap-tpls-0.13.3.min.js"></script>
-<script src="../src/js/app/app.js"></script>
-<script src="../src/js/controllers/homeCtrl.js"></script>
-<script src="../src/js/lib/datetime-picker.min.js"></script>
-
-<script src="../src/js/services/service1.js"></script>
-
-
-</body>
-</html>

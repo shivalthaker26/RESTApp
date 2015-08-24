@@ -41,42 +41,6 @@ var mctrl = this;
             $scope.open[date] = true;
         };
 
-$scope.getReservation = function()
-{
-	$scope.reservation = {};
-		$http({
-			  method: 'GET',
-			  url:'api/customer/all'
-		  }).success(function(response){
-			  $scope.reservation = response.payload;
-			  for(var i=0;i<$scope.reservation.length;i++)
-				  {
-				  $scope.reservation[i].date = new Date($scope.reservation[i].date*1000);
-				  }
-		  }).error(function(error){
-			  console.log(error);
-		  });
-}
-$scope.getCustomer = function()
-{
-
-		 if($scope.custId){
-			 $scope.getCustomer = {};
-
-			 $http({
-				  method:'GET',
-				  url:'api/customer/get/' + $scope.custId
-			  }).success(function(response){
-				  $scope.getCustomer = response.payload;
-				  $scope.getCustomer.date = new Date(response.payload.date*1000);
-			  }).error(function(error){
-				  console.log(error);
-			  });
-		 }
-		  
-		 
-		
-}
 
 $scope.addCust = function()
 {
@@ -94,15 +58,12 @@ $scope.addCust = function()
 	data:$scope.user
 	}).success(function(data)
 	{
-		console.log(data);
+		$location.path("/see_reservation")
 	}).error(function(error)
 	{
 		console.log(error);
 	})
 }
-
-
-
 
 
 
